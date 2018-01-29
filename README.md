@@ -1,7 +1,7 @@
-docker-liquibase
-================
+liquibase
+=========
 
-Docker image with Liquibase installation.
+A lightweight Docker image with Liquibase installed.
 
 ### Build behavior
 
@@ -11,7 +11,8 @@ By default runs a simple container with Liquibase:
 
 ### Run image
 
-``` docker run -it --entrypoint="liquibase" \
+``` 
+docker run -it \
       -v ./drivers:/opt/jdbc_drivers \
       -v ./changelogs:/changelogs \
       docker-liquibase \
@@ -20,6 +21,6 @@ By default runs a simple container with Liquibase:
                 --url=jdbc:postgresql://<YOUR HOST>:5432/<YOUR DB> \
                 --username=postgres \
                 --password=password \
-                --changeLogFile=/changelogs/root.changelog.xml \
+                --changeLogFile=/changelogs/changelog.xml \
                 update"
 ```
